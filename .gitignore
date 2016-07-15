@@ -6,6 +6,7 @@ er-specific files
 *.suo
 *.user
 *.sln.docstates
+*.csproj
 
 # Build results
 
