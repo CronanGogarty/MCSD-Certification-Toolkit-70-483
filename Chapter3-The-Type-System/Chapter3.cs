@@ -30,9 +30,81 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
             }
             Program.dividingLine();
             createBookStruct();
-            
+            Program.dividingLine();
+            makeStudents();
+            Program.dividingLine();
+            int num1 = 12;
+            int num2 = 43;
+            Console.WriteLine("Prior to changeNumbers -> num1 = {0}; num2 = {1}", num1, num2);
+            changeNumbers(num1, num2);
+            Console.WriteLine("After changeNumbers and sum -> num1 = {0}; num2 = {1}", num1, num2);
+            Program.dividingLine();
+            CollegeStudent colStudent = new CollegeStudent();
+            colStudent.firstName = "Colin";
+            colStudent.lastName = "Stewart";
+            colStudent.major = "Computer Science";
+            colStudent.GPA = 4.0;
+            colStudent.outputDetails();
+            Program.dividingLine();
+            int result = MyExtendedMethods.square(45);
+            Console.WriteLine("MyExtendedMethods.square(45) = {0}", result);
             Program.dividingLine();
             Program.returnToIndex();
+        }
+
+        private void changeStudent(Student inStudent)
+        {
+            //because student is a reference type changes made in this method will change the student at Program level
+            inStudent.lastName = "Self";
+        }
+
+        //pass value types to method cause a copy of the values to be passed, 
+        //the ints 'num1' and 'num2' declared in class Chapter3 will not be altered by the methods
+        private void changeNumbers(int first, int second)
+        {
+            int num1 = first + 21;
+            int num2 = second - 12;
+
+            Console.WriteLine("Inside changeNumbers -> num1 = {0}; num2 = {1}", num1, num2);
+
+            Console.WriteLine("Sum({0}, {1}) = {2}", first, second, sum(first, second));
+        }
+        private int sum(int first, int second)
+        {
+            return first + second;
+        }
+
+        private void makeStudents()
+        {
+            Student firstStudent = new Student();
+            Student.StudentCount++;
+            Student secondStudent = new Student();
+            Student.StudentCount++;
+            Student thirdStudent = new Student("Peter", "String", "80%");
+            Student.StudentCount++;
+
+            firstStudent.firstName = "John";
+            firstStudent.lastName = "Smith";
+            firstStudent.grade = "six";
+
+            secondStudent.firstName = "Tom";
+            secondStudent.lastName = "Thumb";
+            secondStudent.grade = "two";
+
+            Console.WriteLine("firstStudent.firstName = " + firstStudent.firstName);
+            Console.WriteLine("secondStudent.firstName = " + secondStudent.firstName);
+            Console.WriteLine("thirdStudent.firstName = " + thirdStudent.firstName);
+            Console.WriteLine("Student.StudentCount = " + Student.StudentCount);
+
+            Program.dividingLine();
+
+            firstStudent.displayName();
+            Console.WriteLine(secondStudent.concatenateName());
+
+            //pass reference type - method will affect the instance passed to it
+            changeStudent(firstStudent);
+            Console.WriteLine("Now firstStudent fullname = " + firstStudent.concatenateName());
+
         }
 
         private void createBookStruct()
@@ -76,7 +148,6 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
                         case "X":
                             validInput=true;
                             closeBook = true;
-                            Program.returnToIndex();
                             break;
                         default:
                             Console.WriteLine("Not a valid input");
