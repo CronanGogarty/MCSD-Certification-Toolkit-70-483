@@ -1,0 +1,6 @@
+c:\users\cronan\documents\visual studio 2013\Projects\MCSD Certification Toolkit (exam 70-483)\MCSD Certification Toolkit (exam 70-483)\bin\Debug\MCSD Certification Toolkit (exam 70-483).exe.config
+c:\users\cronan\documents\visual studio 2013\Projects\MCSD Certification Toolkit (exam 70-483)\MCSD Certification Toolkit (exam 70-483)\bin\Debug\MCSD Certification Toolkit (exam 70-483).exe
+c:\users\cronan\documents\visual studio 2013\Projects\MCSD Certification Toolkit (exam 70-483)\MCSD Certification Toolkit (exam 70-483)\bin\Debug\MCSD Certification Toolkit (exam 70-483).pdb
+c:\users\cronan\documents\visual studio 2013\Projects\MCSD Certification Toolkit (exam 70-483)\MCSD Certification Toolkit (exam 70-483)\obj\Debug\MCSD Certification Toolkit (exam 70-483).csprojResolveAssemblyReference.cache
+c:\users\cronan\documents\visual studio 2013\Projects\MCSD Certification Toolkit (exam 70-483)\MCSD Certification Toolkit (exam 70-483)\obj\Debug\MCSD Certification Toolkit (exam 70-483).exe
+c:\users\cronan\documents\visual studio 2013\Projects\MCSD Certification Toolkit (exam 70-483)\MCSD Certification Toolkit (exam 70-483)\obj\Debug\MCSD Certification Toolkit (exam 70-483).pdb
