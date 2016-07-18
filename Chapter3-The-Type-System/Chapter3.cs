@@ -47,7 +47,23 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
             colStudent.outputDetails();
             Program.dividingLine();
             int result = MyExtendedMethods.square(45);
+            int result1 = 8;
+            result1 = result1.square(); // here I am calling the extension method that I have extended to the int type.
             Console.WriteLine("MyExtendedMethods.square(45) = {0}", result);
+            Console.WriteLine("int result1 = 8; result1.square() = {0}", result1);
+            Program.dividingLine();
+            PropertyStudent myStudent = new PropertyStudent("Tom", "Thumb");    //call the constructor
+            myStudent.MiddleInitial = 'R';  //access private member variables using the public properties
+            myStudent.Age = 15;
+            myStudent.GPA = 3.5;
+            myStudent.displayDetails();
+            Program.dividingLine();
+            IPAddress myIp = new IPAddress();
+            for (int i = 0; i < 32; i++)
+            {
+                myIp[i] = 0;
+            }
+            Console.WriteLine("IPAddress myIp = " + myIp.ToString());
             Program.dividingLine();
             Program.returnToIndex();
         }
@@ -112,7 +128,8 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
             Console.WriteLine("Create a new struct for a book");
             Book myBook = new Book("MCSD Certification Toolkit (Exam 70-483)", "Certification", "Covaci, Tiberiu", 648, 10, 81118612095, "Soft Cover");
 
-            Console.WriteLine(myBook.title);
+            myBook.Title = "MCSD Certification Toolkit - Exam 70-483";  //set the title using the public property
+            Console.WriteLine(myBook.Title);
             Console.WriteLine(myBook.category);
             Console.WriteLine(myBook.author);
             Console.WriteLine(myBook.numPages);
@@ -261,7 +278,7 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
          */
         public struct Book
         {
-            private string _title;
+            private string title;
             public string category;
             public string author;
             public int numPages;
@@ -269,12 +286,15 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
             public double ISBN;
             public string coverStyle;
 
-            public string title { get { return _title; } }  
+            public string Title { 
+                get { return title; }
+                set { title = value; }
+            }  
 
             public Book(string title, string category, string author, int numPages, int
                currentPage, double isbn, string cover)
             {
-                this._title = title;
+                this.title = title;
                 this.category = category;
                 this.author = author;
                 this.numPages = numPages;
