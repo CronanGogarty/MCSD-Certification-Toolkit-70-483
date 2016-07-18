@@ -58,12 +58,8 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
             myStudent.GPA = 3.5;
             myStudent.displayDetails();
             Program.dividingLine();
-            IPAddress myIp = new IPAddress();
-            for (int i = 0; i < 32; i++)
-            {
-                myIp[i] = 0;
-            }
-            Console.WriteLine("IPAddress myIp = " + myIp.ToString());
+            Console.WriteLine("C# generic method.....");
+            Generics.runGenericExample();
             Program.dividingLine();
             Program.returnToIndex();
         }
