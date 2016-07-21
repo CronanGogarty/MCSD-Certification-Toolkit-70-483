@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MCSD_Certification_Toolkit__exam_70_483_.Chapter4_Using_Types;
 
 namespace MCSD_Certification_Toolkit__exam_70_483_
 {
@@ -40,6 +37,7 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
                     Console.WriteLine("0 - Exit application");
                     Console.WriteLine("2 - Chapter 2: Basic Program Structure");
                     Console.WriteLine("3 - Chapter 3: Working With The Type System");
+                    Console.WriteLine("4 - Chapter 4: Using Types");
                     selectedChapter = sbyte.Parse(Console.ReadLine());
 
                 }
@@ -61,6 +59,10 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
                 case 3:
                     Chapter3 chapter3 = new Chapter3();
                     chapter3.chapter3TheTypeSystem();
+                    break;
+                case 4:
+                    Chapter4 chapter4 = new Chapter4();
+                    chapter4.chapter4UsingTypes();
                     break;
                 default:
                     Console.WriteLine("Unknown entry");
