@@ -6,8 +6,8 @@ namespace MCSD_Certification_Toolkit__exam_70_483_.Chapter4_Using_Types
 {
     class Manager : Employee    
     {
-        private List<Employee> subordinates;
-        private bool isDirector;
+        //private List<Employee> subordinates;
+        //private bool isDirector;
         public List<Employee> Subordinates { get; set; }
         public bool IsDirector { get; set; }
 

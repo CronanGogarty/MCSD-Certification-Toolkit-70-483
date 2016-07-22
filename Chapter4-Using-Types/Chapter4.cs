@@ -18,12 +18,27 @@ namespace MCSD_Certification_Toolkit__exam_70_483_.Chapter4_Using_Types
 
             //create some object and test check their type using the 'is' keyword
             Person personObject = new Person();
-            Console.WriteLine( isType(ref personObject) );
+            Console.WriteLine( isType(personObject) );
             Employee employeeObject = new Employee();
-            Console.WriteLine(isType(ref employeeObject));
+            Console.WriteLine(isType(employeeObject));
             Manager managerObject = new Manager();
-            Console.WriteLine(isType(ref managerObject));
+            Console.WriteLine(isType(managerObject));
+            Program.dividingLine();
+            Console.WriteLine("Us the 'as' keyword to cast ");
 
+            Employee managerEmployee = managerObject as Employee;   //will eturn null if cast cannot be completed
+            
+                if (managerEmployee != null)
+                {
+                    Console.WriteLine("Successfully execute operation;\nEmployee managerEmployee = managerObject as Employee");
+                }
+            
+
+            Employee personEmployee = personObject as Employee; //this will return null because a person type cannot be cast to an Employee type
+            if (personEmployee == null)
+            {
+                Console.WriteLine("Could not execute operation;\nEmployee personEmployee = personObject as Employee");
+            }
             Program.dividingLine();
             Program.returnToIndex();
         }
@@ -60,17 +75,19 @@ namespace MCSD_Certification_Toolkit__exam_70_483_.Chapter4_Using_Types
 
         }
 
-        private string isType<T>(ref T type)
+        private string isType<T>(T type)
         {
             string result = "";
             Console.WriteLine(type.ToString());
-            if (type is Person)
+
+            //The is operator determines whether an object is compatible with a particular type
+            if (type is Person) //Person, Employee and Manager all evaluate to true because Employee and Manager are subclasses of Person
             {
                 result += "The type " + type.ToString() + " is of type Person";
-                if (type is Employee)
+                if (type is Employee)   //Employee and Manager evaluate to true because Manger is a subclass of Employee
                 {
                     result += "\nThe type " + type.ToString() + " is also of type Employee";
-                    if (type is Manager)
+                    if (type is Manager) //Only Manager evaluates to true because the other types are superclasses
                     {
                         result += "\nThe type " + type.ToString() + " is also of type Manager";
                     }
@@ -104,5 +121,7 @@ namespace MCSD_Certification_Toolkit__exam_70_483_.Chapter4_Using_Types
 
 
         }
+
+
     }
 }
