@@ -38,6 +38,7 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
                     Console.WriteLine("2 - Chapter 2: Basic Program Structure");
                     Console.WriteLine("3 - Chapter 3: Working With The Type System");
                     Console.WriteLine("4 - Chapter 4: Using Types");
+                    Console.WriteLine("5 - Chapter 5: Creating And Implementing Class Hierarchies");
                     selectedChapter = sbyte.Parse(Console.ReadLine());
 
                 }
@@ -63,6 +64,10 @@ namespace MCSD_Certification_Toolkit__exam_70_483_
                 case 4:
                     Chapter4 chapter4 = new Chapter4();
                     chapter4.chapter4UsingTypes();
+                    break;
+                case 5:
+                    Chapter5_Class_Hierarchies.Chapter5 chapter5 = new Chapter5_Class_Hierarchies.Chapter5();
+                    chapter5.chapter5ClassHierarchies();
                     break;
                 default:
                     Console.WriteLine("Unknown entry");
