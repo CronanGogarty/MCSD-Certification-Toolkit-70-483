@@ -28,6 +28,14 @@ namespace MCSD_Certification_Toolkit__exam_70_483_.Chapter5_Class_Hierarchies
 
             equatablePerson();
 
+            Program.dividingLine();
+
+            disposableClassImplementation();
+
+            Program.dividingLine();
+
+            yieldReturn();
+
             Console.WriteLine();
             Program.returnToIndex();
 
@@ -272,6 +280,40 @@ namespace MCSD_Certification_Toolkit__exam_70_483_.Chapter5_Class_Hierarchies
                 Console.WriteLine("Person " + index + " in List<Person> = " + ep.FirstName + " " + ep.LastName);
                 index++;
             }
+        }
+
+        private void disposableClassImplementation() {
+            DisposableClass dc = new DisposableClass();
+            dc.Name = "DisposableClassObject";
+            dc.Dispose();
+
+            /*
+             * The using block calls Dispose when it ends, even if the code inside it throws an exception.
+             */ 
+            using (DisposableClass usingDisposableClass = new DisposableClass())
+            {
+                usingDisposableClass.Name = "UsingDisposableClassObject";
+            }
+
+            Console.WriteLine("usingDisposableClass using block is completed");
+        }
+
+        private void yieldReturn()
+        {
+            foreach (int i in Integers())
+            {
+                Console.WriteLine(i.ToString());
+            }
+        }
+
+        public IEnumerable<int> Integers()
+        {
+            yield return 1;
+            yield return 2;
+            yield return 4;
+            yield return 8;
+            yield return 16;
+            yield return 16777216;
         }
     }
 }
